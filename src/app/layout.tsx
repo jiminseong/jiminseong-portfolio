@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import cn from "classnames";
 import "./globals.css";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const pretendard = localFont({
   src: "./fonts/PretendardVariable.woff2",
@@ -32,7 +34,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={`${pretendard.variable}  antialiased`}>{children}</body>
+      <body className={cn(pretendard.className, "dark:bg-black dark:text-white")}>
+        <ThemeSwitcher />
+        <div className="min-h-screen">{children}</div>
+      </body>
     </html>
   );
 }

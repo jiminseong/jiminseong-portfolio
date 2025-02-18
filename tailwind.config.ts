@@ -11,9 +11,14 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        black: "#1b1b1b",
+      },
+      boxShadow: {
+        DEFAULT: "0px 4px 20px rgba(27, 27, 27, 0.07)",
       },
     },
   },
   plugins: [],
 };
+
 export default config;
